@@ -818,7 +818,7 @@ let
 
     meta = with stdenv.lib; {
       homepage    = "https://github.com/martingallagher/gawp";
-      description = "A simple, configurable, file watching, job execution tool implemented in Go.";
+      description = "A simple, configurable, file watching, job execution tool implemented in Go";
       maintainers = with maintainers; [ kamilchm ];
       license     = licenses.asl20 ;
       platforms   = platforms.all;
@@ -878,10 +878,11 @@ let
   };
 
   git-lfs = buildFromGitHub {
-    rev = "v1.0.0";
+    date = "1.1.1";  # "date" is effectively "version"
+    rev = "v1.1.1";
     owner = "github";
     repo = "git-lfs";
-    sha256 = "1zlg3rm5yxak6d88brffv1wpj0iq4qgzn6sgg8xn0pbnzxjd1284";
+    sha256 = "1m7kii57jrsb22m5x9v8xa3s1qmipfkpk6cscgxrbrj7g0a75fnc";
 
     # Tests fail with 'lfstest-gitserver.go:46: main redeclared in this block'
     excludedPackages = [ "test" ];
@@ -2051,10 +2052,10 @@ let
   };
 
   liner = buildFromGitHub {
-    rev    = "1bb0d1c1a25ed393d8feb09bab039b2b1b1fbced";
+    rev    = "ad1edfd30321d8f006ccf05f1e0524adeb943060";
     owner  = "peterh";
     repo   = "liner";
-    sha256 = "05ihxpmp6x3hw71xzvjdgxnyvyx2s4lf23xqnfjj16s4j4qidc48";
+    sha256 = "0c24d9j1gnq7r982h1l2isp3d37379qw155hr8ihx9i2mhpfz317";
   };
 
   odeke-em.log = buildFromGitHub {
@@ -2457,11 +2458,11 @@ let
   };
 
   oh = buildFromGitHub {
-    rev = "a99b5f1128247014fb2a83a775fa1813be14b67d";
-    date = "2015-11-21";
+    rev = "f3e482f664e76dcf98d5f94dd93c216da300b78e";
+    date = "2016-02-23";
     owner = "michaelmacinnis";
     repo = "oh";
-    sha256 = "1srl3d1flqlh2k9q9pjss72rxw82msys108x22milfylmr75v03m";
+    sha256 = "1j5g37jjl1kxri44ihb1bsrzx4al07dvl4s5dglb2m7bjia6iqs2";
     goPackageAliases = [ "github.com/michaelmacinnis/oh" ];
     buildInputs = [ adapted liner ];
     disabled = isGo14;
@@ -3346,11 +3347,11 @@ let
   };
 
   syncthing = buildFromGitHub rec {
-    version = "0.12.10";
+    version = "0.12.19";
     rev = "v${version}";
     owner = "syncthing";
     repo = "syncthing";
-    sha256 = "1xvar4mm6f33mg8d8z8h49cni6sj1vfns379zspqvszs404fra0z";
+    sha256 = "11ij8whaqrrzriavxa08jpsmbd1zkc2qxsni1nbgszw2hymmv38g";
     buildFlags = [ "-tags noupgrade,release" ];
     disabled = isGo14;
     buildInputs = [
@@ -3545,10 +3546,10 @@ let
   };
 
   vcs = buildFromGitHub {
-    rev    = "1.0.0";
+    rev    = "1.4.0";
     owner  = "Masterminds";
     repo   = "vcs";
-    sha256 = "1qav4lf4ln5gs81714876q2cy9gfaxblbvawg3hxznbwakd9zmd8";
+    sha256 = "0590ww2av4407y7zy3bcmnr8i74fv00k9zzcxcpjxivl6qszna0d";
   };
 
   viper = buildFromGitHub {
@@ -3733,4 +3734,44 @@ let
     '';
     disabled = isGo14;
   };
+
+  template = buildFromGitHub {
+    rev = "14fd436dd20c3cc65242a9f396b61bfc8a3926fc";
+    owner = "alecthomas";
+    repo = "template";
+    sha256 = "19rzvvcgvr1z2wz9xpqsmlm8syizbpxjp5zbzgakvrqlajpbjvx2";
+  };
+
+  units = buildFromGitHub {
+    rev = "2efee857e7cfd4f3d0138cc3cbb1b4966962b93a";
+    owner = "alecthomas";
+    repo = "units";
+    sha256 = "1j65b91qb9sbrml9cpabfrcf07wmgzzghrl7809hjjhrmbzri5bl";
+  };
+
+  go-difflib = buildFromGitHub {
+    rev = "d8ed2627bdf02c080bf22230dbb337003b7aba2d";
+    owner = "pmezard";
+    repo = "go-difflib";
+    sha256 = "0w1jp4k4zbnrxh3jvh8fgbjgqpf2hg31pbj8fb32kh26px9ldpbs";
+  };
+
+  kingpin = buildFromGitHub {
+    rev = "21551c2a6259a8145110ca80a36e25c9d7624032";
+    owner = "alecthomas";
+    repo = "kingpin";
+    sha256 = "1zhpqc4qxsw9lc1b4dwk5r42k9r702ihzrabs3mnsphvm9jx4l59";
+    propagatedBuildInputs = [ template units ];
+    goPackageAliases = [ "gopkg.in/alecthomas/kingpin.v2" ];
+  };
+
+  go2nix = buildFromGitHub rec {
+    rev = "dd513f1f1336a3cdceb9dd4be0f3c47a09929651";
+    owner = "kamilchm";
+    repo = "go2nix";
+    sha256 = "1ad7zcab5vjbw7a8ns0aspkblqqz0z96b7ak3zdx409rq7rlqdsj";
+    buildInputs = [ go-bindata.bin tools.bin vcs go-spew gls go-difflib assertions goconvey testify kingpin ];
+    preBuild = ''go generate ./...'';
+  };
+
 }; in self
