@@ -10,7 +10,7 @@ matrix:
           language: generic
           osx_image: xcode7.3
           before_install:
-              - brew upgrade && brew install python
+              - brew upgrade && brew install python3
               - export PATH="/usr/local/bin/:$PATH"
               - which python
               - which pip
