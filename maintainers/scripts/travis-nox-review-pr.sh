@@ -33,7 +33,7 @@ elif [[ $1 == build ]]; then
         nix-build pkgs/top-level/release.nix -A tarball
     fi
 
-    if [[ $TRAVIS_PULL_REQUEST == false ]]; then
+    if [[ $TRAVIS_PULL_REQUEST == abc ]]; then
         echo "=== Not a pull request"
     else
         echo "=== Checking PR"
