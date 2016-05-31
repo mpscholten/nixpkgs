@@ -14,6 +14,7 @@ matrix:
               - export PATH="/usr/local/bin/:$PATH"
               - which python
               - which pip
+              - echo $PYTHONPATH
               - ./maintainers/scripts/travis-nox-review-pr.sh nix
 install: ./maintainers/scripts/travis-nox-review-pr.sh nox
 script: ./maintainers/scripts/travis-nox-review-pr.sh build
