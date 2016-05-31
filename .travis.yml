@@ -12,8 +12,6 @@ matrix:
           before_install:
               - brew install python3
               - export PATH="/usr/local/bin:$PATH"
-              - alias python=python3
-              - alias pip=pip3
               - ./maintainers/scripts/travis-nox-review-pr.sh nix
 install: ./maintainers/scripts/travis-nox-review-pr.sh nox
 script: ./maintainers/scripts/travis-nox-review-pr.sh build

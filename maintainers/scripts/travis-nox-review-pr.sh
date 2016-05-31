@@ -3,6 +3,11 @@ set -e
 
 export NIX_CURL_FLAGS=-sS
 
+if [[ $TRAVIS_OS_NAME == "osx" ]]; then
+    alias pip=pip3
+    alias python=python3
+fi
+
 if [[ $1 == nix ]]; then
     echo "=== Installing Nix..."
     # Install Nix
