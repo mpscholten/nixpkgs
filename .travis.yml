@@ -11,6 +11,8 @@ matrix:
           osx_image: xcode7.3
           before_install:
               - brew upgrade && brew install python
+              - which -a python
+              - which -a pip
               - ./maintainers/scripts/travis-nox-review-pr.sh nix
 install: ./maintainers/scripts/travis-nox-review-pr.sh nox
 script: ./maintainers/scripts/travis-nox-review-pr.sh build
