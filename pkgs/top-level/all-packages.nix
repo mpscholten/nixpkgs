@@ -17142,4 +17142,6 @@ in
   iterm2 = callPackage ../applications/misc/iterm2 {};
 
   sequelpro = callPackage ../applications/misc/sequelpro {};
+
+  xcode = darwin.xcode;
 }
