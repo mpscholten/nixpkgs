@@ -16830,4 +16830,6 @@ in
   tomb = callPackage ../os-specific/linux/tomb {};
 
   imatix_gsl = callPackage ../development/tools/imatix_gsl {};
+
+  maphosts = callPackage ../tools/networking/maphosts {};
 }
