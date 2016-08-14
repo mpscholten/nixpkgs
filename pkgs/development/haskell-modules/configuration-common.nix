@@ -964,6 +964,11 @@ self: super: {
       })];
   });
 
+  # Twitch fails to compile on macOS without the Cocoa framework
+  twitch = overrideCabal super.twitch (drv: {
+    extraLibraries = if pkgs.stdenv.isDarwin then [ pkgs.darwin.apple_sdk.frameworks.Cocoa ] else [];
+  });
+
   # GLUT uses `dlopen` to link to freeglut, so we need to set the RUNPATH correctly for
   # it to find `libglut.so` from the nix store. We do this by patching GLUT.cabal to pkg-config
   # depend on freeglut, which provides GHC to necessary information to generate a correct RPATH.
