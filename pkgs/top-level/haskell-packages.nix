@@ -509,6 +509,8 @@ in {
       ghc = bh.compiler.ghcHEAD;
       compilerConfig = callPackage ../development/haskell-modules/configuration-ghc-9.8.x.nix { };
     };
+    ghc97 = packages.ghcHEAD;
+    ghc970 = packages.ghcHEAD;
 
     ghcjs = packages.ghcjs810;
     ghcjs810 = callPackage ../development/haskell-modules rec {
