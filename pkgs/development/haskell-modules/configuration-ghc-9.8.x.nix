@@ -55,6 +55,8 @@ self: super: {
   unix = null;
   xhtml = null;
   system-cxx-std-lib = null;
+  ghc-toolchain = null;
+  ghc-platform = null;
 
   # https://github.com/tibbe/unordered-containers/issues/214
   unordered-containers = dontCheck super.unordered-containers;
