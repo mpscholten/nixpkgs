@@ -352,6 +352,7 @@ in {
     };
     ghc96 = compiler.ghc962;
     ghc99 = compiler.ghcHEAD;
+    ghc990 = compiler.ghcHEAD;
     ghcHEAD = callPackage ../development/compilers/ghc/head.nix {
       bootPkgs =
         # For GHC 9.2 no armv7l bindists are available.
