@@ -9,8 +9,6 @@
 # https://gitlab.haskell.org/ghc/ghc/-/issues/23625
 , enableHyperlinkedSource ? true
 , writeText
-, ghc-platform
-, ghc-toolchain
 }:
 
 if ghcSrc == null || ghcVersion == null
@@ -46,7 +44,6 @@ mkDerivation {
     parsec shake text transformers unordered-containers
   ] ++ lib.optionals (lib.versionAtLeast ghcVersion "9.7") [
     cryptohash-sha256 base16-bytestring
-    ghc-platform ghc-toolchain
   ];
   description = "GHC build system";
   license = lib.licenses.bsd3;
