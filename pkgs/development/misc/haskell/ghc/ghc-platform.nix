@@ -12,7 +12,7 @@ mkDerivation {
     repo = "ghc";
     rev = "3ac423b9645998b178badb6edc7bf3328e7d9e4e";
     sha256 = "sha256-Qv/MoFHudUBqkJyDBklxgpkaLfC2nTPC30UNWNHcP3w=";
-  }) + "libraries/ghc-platform";
+  }) + "/libraries/ghc-platform";
   isLibrary = true;
   isExecutable = false;
   libraryHaskellDepends = [base];
