@@ -355,11 +355,11 @@ in {
       bootPkgs =
         # For GHC 9.2 no armv7l bindists are available.
         if stdenv.hostPlatform.isAarch32 then
-          packages.ghc924
+          packages.ghc94
         else if stdenv.hostPlatform.isPower64 && stdenv.hostPlatform.isLittleEndian then
-          packages.ghc924
+          packages.ghc94
         else
-          packages.ghc924Binary;
+          packages.ghc94;
       inherit (buildPackages.python3Packages) sphinx;
       # Need to use apple's patched xattr until
       # https://github.com/xattr/xattr/issues/44 and
