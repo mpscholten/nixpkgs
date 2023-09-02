@@ -580,9 +580,13 @@ self: super: with self; {
 
   apipkg = callPackage ../development/python-modules/apipkg { };
 
+  apischema = callPackage ../development/python-modules/apischema { };
+
   apispec = callPackage ../development/python-modules/apispec { };
 
   apispec-webframeworks = callPackage ../development/python-modules/apispec-webframeworks { };
+
+  apkit = callPackage ../development/python-modules/apkit { };
 
   aplpy = callPackage ../development/python-modules/aplpy { };
 
@@ -1211,6 +1215,8 @@ self: super: with self; {
 
   paddle2onnx = callPackage ../development/python-modules/paddle2onnx { };
 
+  paddleocr = callPackage ../development/python-modules/paddleocr { };
+
   paddlepaddle = callPackage ../development/python-modules/paddlepaddle { };
 
   pulumi = callPackage ../development/python-modules/pulumi { inherit (pkgs) pulumi; };
@@ -1463,6 +1469,8 @@ self: super: with self; {
   blockdiag = callPackage ../development/python-modules/blockdiag { };
 
   block-io = callPackage ../development/python-modules/block-io { };
+
+  blockfrost-python = callPackage ../development/python-modules/blockfrost-python { };
 
   blocksat-cli = callPackage ../development/python-modules/blocksat-cli { };
 
@@ -1977,6 +1985,8 @@ self: super: with self; {
 
   cock = callPackage ../development/python-modules/cock { };
 
+  cobs = callPackage ../development/python-modules/cobs { };
+
   class-doc = callPackage ../development/python-modules/class-doc { };
 
   cliche = callPackage ../development/python-modules/cliche { };
@@ -2232,6 +2242,8 @@ self: super: with self; {
   cornice = callPackage ../development/python-modules/cornice { };
 
   corsair-scan = callPackage ../development/python-modules/corsair-scan { };
+
+  cose = callPackage ../development/python-modules/cose { };
 
   cot = callPackage ../development/python-modules/cot { };
 
@@ -2560,6 +2572,8 @@ self: super: with self; {
   deap = callPackage ../development/python-modules/deap { };
 
   debian = callPackage ../development/python-modules/debian { };
+
+  debianbts = callPackage ../development/python-modules/debianbts { };
 
   debian-inspector = callPackage ../development/python-modules/debian-inspector { };
 
@@ -7970,6 +7984,8 @@ self: super: with self; {
 
   pkgutil-resolve-name = callPackage ../development/python-modules/pkgutil-resolve-name { };
 
+  pkg-about = callPackage ../development/python-modules/pkg-about { };
+
   micloud = callPackage ../development/python-modules/micloud { };
 
   mqtt2influxdb = callPackage ../development/python-modules/mqtt2influxdb { };
@@ -8178,6 +8194,8 @@ self: super: with self; {
 
   pyheos = callPackage ../development/python-modules/pyheos { };
 
+  pyhepmc = callPackage ../development/python-modules/pyhepmc { };
+
   pyhiveapi = callPackage ../development/python-modules/pyhiveapi { };
 
   pyhumps = callPackage ../development/python-modules/pyhumps { };
@@ -8239,6 +8257,8 @@ self: super: with self; {
   pyshark = callPackage ../development/python-modules/pyshark { };
 
   pysiaalarm = callPackage ../development/python-modules/pysiaalarm { };
+
+  pysimplesoap = callPackage ../development/python-modules/pysimplesoap { };
 
   pyskyqhub = callPackage ../development/python-modules/pyskyqhub { };
 
@@ -8527,6 +8547,8 @@ self: super: with self; {
 
   process-tests = callPackage ../development/python-modules/process-tests { };
 
+  procmon-parser = callPackage ../development/python-modules/procmon-parser { };
+
   proglog = callPackage ../development/python-modules/proglog { };
 
   progressbar2 = callPackage ../development/python-modules/progressbar2 { };
@@ -8786,6 +8808,8 @@ self: super: with self; {
 
   pybotvac = callPackage ../development/python-modules/pybotvac { };
 
+  pybox2d = callPackage ../development/python-modules/pybox2d { };
+
   pybravia = callPackage ../development/python-modules/pybravia { };
 
   pybrowserid = callPackage ../development/python-modules/pybrowserid { };
@@ -8876,6 +8900,8 @@ self: super: with self; {
 
   py-cpuinfo = callPackage ../development/python-modules/py-cpuinfo { };
 
+  pycardano = callPackage ../development/python-modules/pycardano { };
+
   pycrc = callPackage ../development/python-modules/pycrc { };
 
   pycritty = callPackage ../development/python-modules/pycritty { };
@@ -8954,6 +8980,8 @@ self: super: with self; {
 
   pydigiham = callPackage ../development/python-modules/pydigiham { };
 
+  pydiscourse = callPackage ../development/python-modules/pydiscourse { };
+
   pydispatcher = callPackage ../development/python-modules/pydispatcher { };
 
   pydmd = callPackage ../development/python-modules/pydmd { };
@@ -8969,6 +8997,8 @@ self: super: with self; {
   pydot = callPackage ../development/python-modules/pydot {
     inherit (pkgs) graphviz;
   };
+
+  pydrawise = callPackage ../development/python-modules/pydrawise { };
 
   pydrive2 = callPackage ../development/python-modules/pydrive2 { };
 
@@ -9143,6 +9173,8 @@ self: super: with self; {
     # inherit (pkgs) meson won't work because it won't be spliced
     inherit (pkgs.buildPackages) meson;
   };
+
+  pygobject-stubs = callPackage ../development/python-modules/pygobject-stubs { };
 
   pygogo = callPackage ../development/python-modules/pygogo { };
 
@@ -10762,7 +10794,9 @@ self: super: with self; {
 
   pywizlight = callPackage ../development/python-modules/pywizlight { };
 
-  pywlroots = callPackage ../development/python-modules/pywlroots { };
+  pywlroots = callPackage ../development/python-modules/pywlroots {
+    wlroots = pkgs.wlroots_0_15;
+  };
 
   pyws66i = callPackage ../development/python-modules/pyws66i { };
 
@@ -10876,7 +10910,9 @@ self: super: with self; {
 
   qtconsole = callPackage ../development/python-modules/qtconsole { };
 
-  qtile = callPackage ../development/python-modules/qtile { };
+  qtile = callPackage ../development/python-modules/qtile {
+    wlroots = pkgs.wlroots_0_15;
+  };
   qtile-extras = callPackage ../development/python-modules/qtile-extras { };
 
   qtpy = callPackage ../development/python-modules/qtpy { };
