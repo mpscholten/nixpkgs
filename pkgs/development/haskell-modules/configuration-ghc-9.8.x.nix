@@ -54,6 +54,7 @@ self: super: {
   transformers = null;
   unix = null;
   xhtml = null;
+  system-cxx-std-lib = null;
 
   # https://github.com/tibbe/unordered-containers/issues/214
   unordered-containers = dontCheck super.unordered-containers;
