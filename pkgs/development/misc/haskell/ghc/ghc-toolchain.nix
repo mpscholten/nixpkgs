@@ -7,6 +7,7 @@
 , transformers
 , text
 , ghc-platform
+, fetchFromGitLab
 }:
 mkDerivation {
   pname = "ghc-toolchain";

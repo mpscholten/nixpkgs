@@ -1,6 +1,7 @@
 { mkDerivation
 , base
 , lib
+, fetchFromGitLab
 }:
 mkDerivation {
   pname = "ghc-platform";
