@@ -513,6 +513,8 @@ in {
     };
     ghc97 = packages.ghcHEAD;
     ghc970 = packages.ghcHEAD;
+    ghc99 = packages.ghcHEAD;
+    ghc990 = packages.ghcHEAD;
 
     ghcjs = packages.ghcjs810;
     ghcjs810 = callPackage ../development/haskell-modules rec {
