@@ -513,6 +513,8 @@ in {
     };
     ghc97 = packages.ghcHEAD;
     ghc970 = packages.ghcHEAD;
+    ghc98 = packages.ghcHEAD;
+    ghc980 = packages.ghcHEAD;
     ghc99 = packages.ghcHEAD;
     ghc990 = packages.ghcHEAD;
 
