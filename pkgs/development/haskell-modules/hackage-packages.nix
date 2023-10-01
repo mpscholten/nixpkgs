@@ -28679,8 +28679,6 @@ self: {
        ];
        description = "Comprehensive Amazon Web Services SDK";
        license = lib.licenses.mpl20;
-       hydraPlatforms = lib.platforms.none;
-       broken = true;
      }) {};
 
   "amazonka-accessanalyzer" = callPackage
