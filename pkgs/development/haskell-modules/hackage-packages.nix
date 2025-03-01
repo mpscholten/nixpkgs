@@ -172766,8 +172766,8 @@ self: {
      }:
      mkDerivation {
        pname = "ihp-hsx";
-       version = "1.4.0";
-       sha256 = "1dgx0rzhh19ldwraa2yqd5ksv537irgjb9dp6x8jvmaxi0rx9g3z";
+       version = "1.4.1";
+       sha256 = "sha256-ODEJpagHEdKuyn7l3RgprnyOpeCeKXXdamjZ9qk4+AI=";
        libraryHaskellDepends = [
          base blaze-html blaze-markup bytestring containers ghc megaparsec
          string-conversions template-haskell text unordered-containers
