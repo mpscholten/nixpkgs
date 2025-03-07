@@ -2811,6 +2811,10 @@ self: super: {
       sha256 = "sha256-ZdCXMhni+RGisRODiElObW5c4hKy2giWQmWnatqeRJo=";
     }))
   ];
+
+  # megaparsec >=9.2.1 && <9.3 || >=9.3.1 && <9.4 || >=9.5.0 && <9.6 || >=9.6.1 && <9.7,
+  # tasty-quickcheck >=0.10.2 && <0.11
+  candid = doJailbreak super.candid;
 } // import ./configuration-tensorflow.nix {inherit pkgs haskellLib;} self super
 
 # Gogol Packages
