@@ -346067,7 +346067,6 @@ self: {
       ];
       description = "A library for Passbook pass creation & signing";
       license = lib.licenses.bsd3;
-      hydraPlatforms = lib.platforms.none;
       maintainers = [ lib.maintainers.mpscholten ];
     }
   ) { };
