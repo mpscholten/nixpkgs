@@ -663,6 +663,7 @@ package-maintainers:
     - pdftotext
     - warp-systemd
     - amazonka
+    - libssh2
   wolfgangwalther:
     - postgres-websockets
     - postgrest
