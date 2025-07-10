@@ -415085,8 +415085,6 @@ self: {
       libraryToolDepends = [ c2hs ];
       description = "FFI bindings to libssh2 SSH2 client library (http://libssh2.org/)";
       license = lib.licenses.bsd3;
-      hydraPlatforms = lib.platforms.none;
-      broken = true;
     }
   ) { inherit (pkgs) libssh2; };
 
