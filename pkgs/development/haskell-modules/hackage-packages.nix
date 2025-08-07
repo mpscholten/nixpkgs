@@ -650181,8 +650181,6 @@ self: {
       ];
       description = "Lenses for the taggy html/xml parser";
       license = lib.licenses.bsd3;
-      hydraPlatforms = lib.platforms.none;
-      broken = true;
     }
   ) { };
 

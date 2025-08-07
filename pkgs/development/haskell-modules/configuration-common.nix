@@ -3272,6 +3272,8 @@ self: super:
 
   # 2025-5-15: Too strict bounds on base <4.19, see: https://github.com/zachjs/sv2v/issues/317
   sv2v = doJailbreak super.sv2v;
+
+  taggy-lens = dontCheck super.taggy-lens;
 }
 // import ./configuration-tensorflow.nix { inherit pkgs haskellLib; } self super
 
