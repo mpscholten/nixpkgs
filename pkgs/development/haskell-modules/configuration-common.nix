@@ -3459,6 +3459,8 @@ with haskellLib;
   stripe-signature = doJailbreak super.stripe-signature;
   stripe-wreq = doJailbreak super.stripe-wreq;
 
+  network = dontCheck super.network;
+
   # 2025-08-01: Fixes few build errors related to pointers.
   # https://github.com/haskell-cryptography/botan/pull/17
   botan-bindings = appendPatch (pkgs.fetchpatch2 {
