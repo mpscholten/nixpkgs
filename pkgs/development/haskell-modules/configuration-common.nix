@@ -1080,6 +1080,15 @@ with haskellLib;
   pipes-extra = dontCheck super.pipes-extra;
   posix-pty = dontCheck super.posix-pty; # https://github.com/merijn/posix-pty/issues/12
   postgresql-binary = dontCheck super.postgresql-binary; # needs a running postgresql server
+  # https://github.com/nikita-volkov/postgresql-types/issues/67
+  postgresql-types = dontCheck (doJailbreak super.postgresql-types); # ptr-peeker ^>=0.1 too tight; tests need postgresql
+  # https://github.com/nikita-volkov/postgresql-types-algebra/issues/2
+  postgresql-types-algebra = doJailbreak super.postgresql-types-algebra; # ptr-peeker ^>=0.1 too tight
+  postgresql-simple-postgresql-types = dontCheck super.postgresql-simple-postgresql-types; # tests need testcontainers (Docker + PostgreSQL)
+  # https://github.com/nikita-volkov/hasql-postgresql-types/issues/4
+  hasql-postgresql-types = dontHaddock (doJailbreak super.hasql-postgresql-types); # ptr-peeker ^>=0.1 too tight
+  # https://github.com/awkward-squad/hasql-interpolate/pull/27
+  hasql-interpolate = dontCheck (doJailbreak super.hasql-interpolate); # hasql < 1.10 too tight; tests need postgresql
   powerdns = dontCheck super.powerdns; # Tests require networking and external services
   process-streaming = dontCheck super.process-streaming;
   punycode = dontCheck super.punycode;
