@@ -319103,8 +319103,6 @@ self: {
       ];
       description = "SDK for defining modular mappings to databases on top of Hasql";
       license = lib.licensesSpdx."MIT";
-      hydraPlatforms = lib.platforms.none;
-      broken = true;
     }
   ) { };
 
